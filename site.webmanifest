@@ -1,0 +1,13 @@
+{
+  "name": "Trattoria il Fantino",
+  "short_name": "il Fantino",
+  "description": "Cucina modenese sotto la Ghirlandina, dai primi del '900.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0C2320",
+  "theme_color": "#0C2320",
+  "icons": [
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
