@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <!-- Biprimo restaurant site, Trattoria il Fantino, Modena. Basic tier.
-     Visual axis: teal-green dark (from the logo) + warm gold accent + cream text. -->
+     Visual axis: warm linen (light mode) + logo teal (#2E6F66) + gold accent (#D8A24A). -->
 <html lang="it" class="scroll-smooth">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Trattoria il Fantino: cucina modenese sotto la Ghirlandina · Via Donzi 7, Modena</title>
 <meta name="description" content="Sotto la Ghirlandina dai primi del '900. Paste fresche fatte in casa, salumi e formaggi dal banco, costine brasate al Lambrusco. La vera cucina modenese, in centro a Modena. Prenota: 059 223646." />
-<meta name="theme-color" content="#0C2320" />
+<meta name="theme-color" content="#F7F2E8" />
 
 <link rel="canonical" href="https://fantino.biprimo.com/" />
 <link rel="alternate" hreflang="it" href="https://fantino.biprimo.com/" />
@@ -23,15 +23,15 @@
 <meta property="og:title" content="Trattoria il Fantino: la vera cucina modenese, sotto la Ghirlandina" />
 <meta property="og:description" content="Dai primi del '900. Paste fresche fatte in casa, il banco di salumi e formaggi, le Sorbarette brasate al Lambrusco. In centro a Modena, Via Donzi 7." />
 <meta property="og:url" content="https://fantino.biprimo.com/" />
-<meta property="og:image" content="https://fantino.biprimo.com/images/hero.jpg" />
-<meta property="og:image:alt" content="Il banco di salumi e vini della Trattoria il Fantino a Modena" />
+<meta property="og:image" content="https://fantino.biprimo.com/images/g1.jpg" />
+<meta property="og:image:alt" content="Gnocco fritto, tigelle e tagliere di salumi della Trattoria il Fantino" />
 <meta property="og:locale" content="it_IT" />
 <meta property="og:locale:alternate" content="en_US" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Trattoria il Fantino: la vera cucina modenese" />
 <meta name="twitter:description" content="Sotto la Ghirlandina dai primi del '900. Paste fresche, salumi dal banco, Sorbarette al Lambrusco. Via Donzi 7, Modena." />
-<meta name="twitter:image" content="https://fantino.biprimo.com/images/hero.jpg" />
+<meta name="twitter:image" content="https://fantino.biprimo.com/images/g1.jpg" />
 
 <!-- Self-hosted fonts, GDPR (no Google Fonts CDN). -->
 <link rel="preload" href="fonts/fraunces-300-900-normal.woff2" as="font" type="font/woff2" crossorigin />
@@ -42,11 +42,12 @@
   tailwind.config = {
     theme: { extend: {
       colors: {
-        pine:{DEFAULT:'#0C2320', surface:'#143A34', raised:'#1C463F'},  /* dark green base */
-        green:{DEFAULT:'#2E6F66', soft:'#3E8A7E'},                       /* logo teal-green */
-        gold:{DEFAULT:'#D8A24A', soft:'#E7C07A'},                        /* warm accent */
+        linen:{DEFAULT:'#F7F2E8', surface:'#EDE6D6', raised:'#E3DAC8'},
+        forest:{DEFAULT:'#1C3530'},
+        teal:{DEFAULT:'#2E6F66', soft:'#3E8A7E'},
+        gold:{DEFAULT:'#D8A24A', soft:'#E7C07A'},
         cream:'#F4EFE3',
-        line:'rgba(216,162,74,.18)',
+        line:'rgba(46,111,102,.18)',
       },
       fontFamily:{ display:['Fraunces','Georgia','serif'], body:['"Hanken Grotesk"','system-ui','sans-serif'] },
       maxWidth:{ content:'78rem' },
@@ -59,29 +60,30 @@
   @font-face{font-family:'Fraunces';font-style:italic;font-weight:300 900;font-display:swap;src:url('fonts/fraunces-300-900-italic.woff2') format('woff2');}
   @font-face{font-family:'Hanken Grotesk';font-style:normal;font-weight:300 800;font-display:swap;src:url('fonts/hanken-grotesk-normal.woff2') format('woff2');}
 
-  :root{ --line:rgba(216,162,74,.18); }
+  :root{ --line:rgba(46,111,102,.18); }
   html{ -webkit-font-smoothing:antialiased; }
-  body{ background-color:#0C2320; color:#F4EFE3; overflow-x:clip; }
-  .grain::before{ content:""; position:fixed; inset:0; pointer-events:none; z-index:70; opacity:.05; mix-blend-mode:overlay;
+  body{ background-color:#F7F2E8; color:#1C3530; overflow-x:clip; }
+  .grain::before{ content:""; position:fixed; inset:0; pointer-events:none; z-index:70; opacity:.04; mix-blend-mode:multiply;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
-  .glass{ background:rgba(20,58,52,.55); backdrop-filter:blur(16px) saturate(1.15); -webkit-backdrop-filter:blur(16px) saturate(1.15);
-    border:1px solid rgba(216,162,74,.20); box-shadow:0 36px 100px -56px rgba(0,0,0,.85), inset 0 1px 0 rgba(244,239,227,.06); }
+  .glass{ background:rgba(237,230,214,.88); backdrop-filter:blur(16px) saturate(1.1); -webkit-backdrop-filter:blur(16px) saturate(1.1);
+    border:1px solid rgba(46,111,102,.22); box-shadow:0 12px 60px -20px rgba(0,0,0,.15), inset 0 1px 0 rgba(255,255,255,.55); }
   .scrim-hero{ background:linear-gradient(to top, rgba(7,22,20,.94) 0%, rgba(7,22,20,.42) 44%, rgba(7,22,20,.14) 66%, rgba(7,22,20,.55) 100%); }
   .scrim-soft{ background:linear-gradient(to bottom, rgba(7,22,20,.62), rgba(7,22,20,.86)); }
-  .green-glow{ background:radial-gradient(120% 80% at 18% 100%, rgba(46,111,102,.55), transparent 60%); }
+  .green-glow{ background:radial-gradient(120% 80% at 18% 100%, rgba(46,111,102,.45), transparent 60%); }
   .reveal{ opacity:0; transform:translateY(26px); transition:opacity .95s cubic-bezier(.19,.7,.2,1), transform .95s cubic-bezier(.19,.7,.2,1); }
   .reveal.in{ opacity:1; transform:none; }
   @keyframes kenburns{ from{transform:scale(1.03);} to{transform:scale(1.13);} } .kenburns{ animation:kenburns 24s ease-out forwards; }
   @keyframes introUp{ from{opacity:0;transform:translateY(30px);} to{opacity:1;transform:none;} } .intro{ opacity:0; animation:introUp 1.1s cubic-bezier(.19,.7,.2,1) forwards; }
-  .leader{ flex:1; height:0; border-bottom:1.5px dotted rgba(216,162,74,.42); transform:translateY(-.32em); margin:0 .5rem; }
+  .leader{ flex:1; height:0; border-bottom:1.5px dotted rgba(46,111,102,.30); transform:translateY(-.32em); margin:0 .5rem; }
   #nav{ color:#F4EFE3; transition:background-color .45s ease, box-shadow .45s ease, padding .45s ease; }
-  #nav.scrolled{ background-color:rgba(10,28,25,.86); backdrop-filter:blur(14px) saturate(1.2); -webkit-backdrop-filter:blur(14px) saturate(1.2); box-shadow:0 1px 0 rgba(216,162,74,.16), 0 22px 60px -40px rgba(0,0,0,.9); }
+  #nav.scrolled{ background-color:rgba(247,242,232,.94); backdrop-filter:blur(14px) saturate(1.1); -webkit-backdrop-filter:blur(14px) saturate(1.1); box-shadow:0 1px 0 rgba(46,111,102,.18), 0 22px 60px -40px rgba(0,0,0,.12); color:#1C3530; }
   .ph{ position:relative; overflow:hidden; background:radial-gradient(120% 120% at 20% 10%, #2E6F66 0%, #143A34 48%, #0C2320 100%); }
   .ph-fallback::after{ content:"Foto"; position:absolute; inset:0; display:grid; place-items:center; font-family:'"Hanken Grotesk"',sans-serif; font-size:.7rem; letter-spacing:.12em; text-transform:uppercase; color:rgba(244,239,227,.7); }
   #lightbox{ transition:opacity .35s ease; } #lightbox.show{ opacity:1; pointer-events:auto; }
   .ulink{ position:relative; } .ulink::after{ content:""; position:absolute; left:0; right:100%; bottom:-3px; height:1.5px; background:currentColor; transition:right .45s cubic-bezier(.2,.7,.2,1); } .ulink:hover::after,.ulink.active::after{ right:0; }
   @keyframes nudge{ 0%,100%{transform:translateY(0);opacity:.7} 50%{transform:translateY(7px);opacity:1} } .nudge{ animation:nudge 2.2s ease-in-out infinite; }
-  ::selection{ background:#D8A24A; color:#0C2320; } .deco-rule{ background:linear-gradient(90deg, transparent, #D8A24A 50%, transparent); height:1px; }
+  ::selection{ background:#2E6F66; color:#F7F2E8; } .deco-rule{ background:linear-gradient(90deg, transparent, #D8A24A 50%, transparent); height:1px; }
+  .allergen{ font-size:.65rem; font-family:monospace; color:rgba(28,53,48,.45); margin-left:.4rem; letter-spacing:.02em; vertical-align:baseline; flex-shrink:0; }
   @media (prefers-reduced-motion: reduce){ .reveal{opacity:1!important;transform:none!important;transition:none!important;} .kenburns,.intro,.nudge{animation:none!important;opacity:1!important;} html{scroll-behavior:auto;} }
 </style>
 
@@ -92,7 +94,7 @@
   "name": "Trattoria il Fantino",
   "description": "Trattoria dal sapore antico, sotto la Ghirlandina dai primi del Novecento. Cucina tradizionale modenese, paste fresche fatte in casa, salumi e formaggi dal banco e vini del territorio.",
   "url": "https://fantino.biprimo.com/",
-  "image": "https://fantino.biprimo.com/images/hero.jpg",
+  "image": "https://fantino.biprimo.com/images/g1.jpg",
   "telephone": "+39 059 223646",
   "servesCuisine": ["Italian", "Emilian", "Modenese"],
   "priceRange": "€€",
@@ -120,8 +122,8 @@
 <script defer data-domain="fantino.biprimo.com" src="https://plausible.io/js/script.js"></script>
 </head>
 
-<body class="grain font-body antialiased text-cream bg-pine">
-<a href="#main" data-it="Salta al contenuto" data-en="Skip to content" class="sr-only focus:not-sr-only focus:absolute focus:z-[80] focus:top-3 focus:left-3 focus:bg-gold focus:text-pine focus:px-4 focus:py-2 focus:rounded-full">Salta al contenuto</a>
+<body class="grain font-body antialiased bg-linen text-forest">
+<a href="#main" data-it="Salta al contenuto" data-en="Skip to content" class="sr-only focus:not-sr-only focus:absolute focus:z-[80] focus:top-3 focus:left-3 focus:bg-gold focus:text-forest focus:px-4 focus:py-2 focus:rounded-full">Salta al contenuto</a>
 
 <!-- NAV -->
 <header id="nav" class="fixed top-0 inset-x-0 z-50 py-4 md:py-5">
@@ -130,10 +132,10 @@
       <span aria-hidden="true" class="shrink-0 grid place-items-center h-10 w-10 rounded-full border border-gold/70 text-gold font-display italic text-lg leading-none">F</span>
       <span class="leading-tight min-w-0">
         <span class="block font-display text-[1.05rem] sm:text-[1.2rem] tracking-tight truncate">Trattoria il Fantino</span>
-        <span class="block text-[.6rem] sm:text-[.62rem] uppercase tracking-[.2em] text-cream/65 truncate" data-it="Modena · dal primo '900" data-en="Modena · since the early 1900s">Modena · dal primo '900</span>
+        <span class="block text-[.6rem] sm:text-[.62rem] uppercase tracking-[.2em] opacity-65 truncate" data-it="Modena · dal primo '900" data-en="Modena · since the early 1900s">Modena · dal primo '900</span>
       </span>
     </a>
-    <div class="hidden lg:flex items-center gap-8 text-sm tracking-wide text-cream/90">
+    <div class="hidden lg:flex items-center gap-8 text-sm tracking-wide opacity-90">
       <a href="#storia" class="ulink" data-it="Storia" data-en="Story">Storia</a>
       <a href="#banco" class="ulink" data-it="Il banco" data-en="The counter">Il banco</a>
       <a href="#menu" class="ulink" data-it="Il menù" data-en="Menu">Il menù</a>
@@ -142,30 +144,30 @@
     </div>
     <div class="flex items-center gap-2.5 md:gap-3.5 shrink-0">
       <div class="flex items-center rounded-full p-0.5 text-xs font-semibold" style="border:1px solid rgba(216,162,74,.5)">
-        <button id="lang-it" type="button" aria-label="Italiano" class="text-cream px-3 py-1.5 rounded-full transition-colors cursor-pointer">IT</button>
-        <button id="lang-en" type="button" aria-label="English" class="text-cream px-3 py-1.5 rounded-full transition-colors cursor-pointer">EN</button>
+        <button id="lang-it" type="button" aria-label="Italiano" class="px-3 py-1.5 rounded-full transition-colors cursor-pointer">IT</button>
+        <button id="lang-en" type="button" aria-label="English" class="px-3 py-1.5 rounded-full transition-colors cursor-pointer">EN</button>
       </div>
-      <a href="tel:+39059223646" class="hidden sm:inline-flex items-center gap-2 rounded-full bg-gold px-4 md:px-5 py-2.5 text-sm font-semibold text-pine hover:bg-gold-soft transition-colors cursor-pointer">
+      <a href="tel:+39059223646" class="hidden sm:inline-flex items-center gap-2 rounded-full bg-gold px-4 md:px-5 py-2.5 text-sm font-semibold text-forest hover:bg-gold-soft transition-colors cursor-pointer">
         <span data-it="Prenota" data-en="Reserve">Prenota</span>
       </a>
       <button id="menu-btn" type="button" aria-label="Apri il menù" aria-expanded="false" aria-controls="mobile-menu" class="lg:hidden grid place-items-center h-10 w-10 rounded-full cursor-pointer" style="border:1px solid rgba(216,162,74,.5)">
-        <svg class="h-5 w-5 text-cream" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
     </div>
   </nav>
   <div id="mobile-menu" class="lg:hidden hidden mt-4 mx-4 rounded-2xl glass shadow-xl">
     <div class="flex justify-end px-3 pt-3">
-      <button id="menu-close" type="button" aria-label="Chiudi il menù" class="grid place-items-center h-9 w-9 rounded-full border border-gold/40 text-cream/80 hover:text-cream hover:border-gold transition-colors cursor-pointer">
+      <button id="menu-close" type="button" aria-label="Chiudi il menù" class="grid place-items-center h-9 w-9 rounded-full border border-teal/40 text-forest/80 hover:text-forest hover:border-teal transition-colors cursor-pointer">
         <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
       </button>
     </div>
-    <div class="px-5 pb-5 pt-1 flex flex-col gap-1 text-lg font-display text-cream">
+    <div class="px-5 pb-5 pt-1 flex flex-col gap-1 text-lg font-display text-forest">
       <a href="#storia" class="py-2.5 border-b border-line" data-it="Storia" data-en="Story">Storia</a>
       <a href="#banco" class="py-2.5 border-b border-line" data-it="Il banco" data-en="The counter">Il banco</a>
       <a href="#menu" class="py-2.5 border-b border-line" data-it="Il menù" data-en="Menu">Il menù</a>
       <a href="#galleria" class="py-2.5 border-b border-line" data-it="Galleria" data-en="Gallery">Galleria</a>
       <a href="#visita" class="py-2.5 border-b border-line" data-it="Visita" data-en="Visit">Visita</a>
-      <a href="tel:+39059223646" class="mt-3 inline-flex justify-center items-center gap-2 rounded-full bg-gold px-5 py-3 text-base font-semibold text-pine cursor-pointer"><span data-it="Prenota un tavolo" data-en="Reserve a table">Prenota un tavolo</span></a>
+      <a href="tel:+39059223646" class="mt-3 inline-flex justify-center items-center gap-2 rounded-full bg-gold px-5 py-3 text-base font-semibold text-forest cursor-pointer"><span data-it="Prenota un tavolo" data-en="Reserve a table">Prenota un tavolo</span></a>
     </div>
   </div>
 </header>
@@ -174,7 +176,7 @@
 
 <!-- HERO -->
 <section class="relative h-[100svh] min-h-[600px] w-full overflow-hidden">
-  <div class="ph absolute inset-0"><img src="images/hero.jpg" alt="Lo chef dietro il banco di salumi e vini della Trattoria il Fantino" class="kenburns h-full w-full object-cover object-[60%_center]" fetchpriority="high" onerror="imgFail(this)" /></div>
+  <div class="ph absolute inset-0"><img src="images/g1.jpg" alt="Gnocco fritto, tigelle e tagliere di salumi della Trattoria il Fantino" class="kenburns h-full w-full object-cover object-[center_30%]" fetchpriority="high" onerror="imgFail(this)" /></div>
   <div aria-hidden="true" class="absolute inset-0 scrim-hero"></div>
   <div aria-hidden="true" class="absolute inset-0 green-glow"></div>
   <div class="relative h-full mx-auto max-w-content px-5 md:px-8 flex flex-col justify-end pb-20 md:pb-24">
@@ -182,7 +184,7 @@
     <h1 class="intro mt-5 font-display font-medium text-cream leading-[.92] tracking-[-.02em] text-[clamp(3rem,11vw,8rem)]" style="animation-delay:.3s">Trattoria <span class="italic text-gold">il Fantino</span></h1>
     <p class="intro mt-6 max-w-2xl text-cream/90 text-xl md:text-2xl font-display leading-snug" style="animation-delay:.45s" data-it="Dove i cavallerizzi dell'accademia legavano i cavalli, da oltre un secolo si serve la vera cucina modenese." data-en="Where the academy's riders once tied their horses, true Modenese cooking has been served for over a century.">Dove i cavallerizzi dell'accademia legavano i cavalli, da oltre un secolo si serve la vera cucina modenese.</p>
     <div class="intro mt-9 flex flex-col sm:flex-row sm:flex-wrap items-center sm:justify-start gap-3.5" style="animation-delay:.65s">
-      <a href="tel:+39059223646" class="inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 text-sm font-semibold text-pine shadow-lg hover:bg-gold-soft transition-colors cursor-pointer"><span data-it="Prenota un tavolo" data-en="Reserve a table">Prenota un tavolo</span><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="tel:+39059223646" class="inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 text-sm font-semibold text-forest shadow-lg hover:bg-gold-soft transition-colors cursor-pointer"><span data-it="Prenota un tavolo" data-en="Reserve a table">Prenota un tavolo</span><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <a href="#menu" class="inline-flex items-center gap-2 rounded-full border border-cream/40 px-7 py-3.5 text-sm font-semibold text-cream hover:bg-cream/10 transition-colors cursor-pointer"><span data-it="Guarda il menù" data-en="See the menu">Guarda il menù</span></a>
     </div>
   </div>
@@ -190,25 +192,25 @@
 </section>
 
 <!-- LEGEND / STATS STRIP -->
-<section class="bg-pine-surface text-cream py-14 md:py-16 border-y border-gold/20">
+<section class="bg-linen-surface text-forest py-14 md:py-16 border-y border-teal/15">
   <div class="mx-auto max-w-content px-5 md:px-8">
-    <p class="reveal text-center font-display italic text-gold-soft text-xl md:text-2xl leading-snug max-w-3xl mx-auto" data-it="Paste tirate a mano, il banco di salumi e formaggi, i vini del territorio. Niente fronzoli: solo Modena nel piatto." data-en="Hand-rolled pasta, the salumi and cheese counter, local wines. No frills: just Modena on the plate.">Paste tirate a mano, il banco di salumi e formaggi, i vini del territorio. Niente fronzoli: solo Modena nel piatto.</p>
+    <p class="reveal text-center font-display italic text-teal text-xl md:text-2xl leading-snug max-w-3xl mx-auto" data-it="Paste tirate a mano, il banco di salumi e formaggi, i vini del territorio. Niente fronzoli: solo Modena nel piatto." data-en="Hand-rolled pasta, the salumi and cheese counter, local wines. No frills: just Modena on the plate.">Paste tirate a mano, il banco di salumi e formaggi, i vini del territorio. Niente fronzoli: solo Modena nel piatto.</p>
     <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
-      <div class="reveal"><p class="font-display text-3xl md:text-4xl text-cream">Dal primo '900</p><p class="mt-2 text-sm uppercase tracking-[.18em] text-cream/65" data-it="Sotto la Ghirlandina" data-en="Under the Ghirlandina">Sotto la Ghirlandina</p></div>
-      <div class="reveal sm:border-x border-gold/20"><p class="font-display text-3xl md:text-4xl text-cream">4,3 <span class="text-gold-soft">★</span></p><p class="mt-2 text-sm uppercase tracking-[.18em] text-cream/65" data-it="Oltre 3.400 recensioni" data-en="Over 3,400 reviews">Oltre 3.400 recensioni</p></div>
-      <div class="reveal"><p class="font-display text-2xl md:text-3xl text-cream leading-tight">Gambero Rosso<br/>Touring Club</p><p class="mt-2 text-sm uppercase tracking-[.18em] text-cream/65" data-it="Nelle guide" data-en="In the guides">Nelle guide</p></div>
+      <div class="reveal"><p class="font-display text-3xl md:text-4xl text-forest">Dal primo '900</p><p class="mt-2 text-sm uppercase tracking-[.18em] text-forest/55" data-it="Sotto la Ghirlandina" data-en="Under the Ghirlandina">Sotto la Ghirlandina</p></div>
+      <div class="reveal sm:border-x border-teal/15"><p class="font-display text-3xl md:text-4xl text-forest">4,4 <span class="text-gold">★</span></p><p class="mt-2 text-sm uppercase tracking-[.18em] text-forest/55" data-it="Oltre 3.300 recensioni" data-en="Over 3,300 reviews">Oltre 3.300 recensioni</p></div>
+      <div class="reveal"><p class="font-display text-2xl md:text-3xl text-forest leading-tight">Gambero Rosso<br/>Touring Club</p><p class="mt-2 text-sm uppercase tracking-[.18em] text-forest/55" data-it="Nelle guide" data-en="In the guides">Nelle guide</p></div>
     </div>
   </div>
 </section>
 
 <!-- STORIA -->
-<section id="storia" class="scroll-mt-24 py-20 md:py-32 md:min-h-[100svh] md:flex md:flex-col md:justify-center bg-pine">
+<section id="storia" class="scroll-mt-24 py-20 md:py-32 md:min-h-[100svh] md:flex md:flex-col md:justify-center bg-linen">
   <div class="mx-auto max-w-content px-5 md:px-8 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-    <div class="order-2 lg:order-1"><div class="reveal ph rounded-[1.4rem] overflow-hidden aspect-[4/5] shadow-2xl ring-1 ring-gold/20"><img src="images/story.jpg" alt="Lo chef della Trattoria il Fantino accanto allo scaffale dei vini" class="h-full w-full object-cover" loading="lazy" onerror="imgFail(this)" /></div></div>
+    <div class="order-2 lg:order-1"><div class="reveal ph rounded-[1.4rem] overflow-hidden aspect-[4/5] shadow-xl ring-1 ring-teal/15"><img src="images/story.jpg" alt="Lo chef della Trattoria il Fantino accanto allo scaffale dei vini" class="h-full w-full object-cover" loading="lazy" onerror="imgFail(this)" /></div></div>
     <div class="order-1 lg:order-2">
       <p class="reveal flex items-center gap-3 text-xs uppercase tracking-[.28em] text-gold font-semibold"><span class="inline-block h-px w-8 bg-gold"></span><span data-it="La nostra storia" data-en="Our Story">La nostra storia</span></p>
-      <h2 class="reveal mt-5 font-display font-medium leading-[1.04] tracking-[-.015em] text-[clamp(2rem,4.5vw,3.2rem)] text-cream" data-it="Un secolo sotto la torre." data-en="A century under the tower.">Un secolo sotto la torre.</h2>
-      <div class="reveal mt-6 space-y-5 text-lg leading-relaxed text-cream/80 max-w-xl">
+      <h2 class="reveal mt-5 font-display font-medium leading-[1.04] tracking-[-.015em] text-[clamp(2rem,4.5vw,3.2rem)] text-forest" data-it="Un secolo sotto la torre." data-en="A century under the tower.">Un secolo sotto la torre.</h2>
+      <div class="reveal mt-6 space-y-5 text-lg leading-relaxed text-forest/70 max-w-xl">
         <p data-it="Dove un tempo i cavallerizzi dell'accademia militare tenevano il loro circolo, il Fantino apre le porte dai primi anni del Novecento. Da allora, sotto la Ghirlandina, si serve la Modena di sempre." data-en="Where the cavalry officers of the military academy once kept their club, il Fantino has opened its doors since the early 1900s. Ever since, under the Ghirlandina, it has served the Modena of always.">Dove un tempo i cavallerizzi dell'accademia militare tenevano il loro circolo, il Fantino apre le porte dai primi anni del Novecento. Da allora, sotto la Ghirlandina, si serve la Modena di sempre.</p>
         <p data-it="Dal 2007 la cucina è nelle mani degli chef Marco Bianco e Mauro Calzolari. Paste fresche tirate a mano, salumi e formaggi dal grande banco, vini del territorio. La vera cucina di casa, servita come una volta." data-en="Since 2007 the kitchen has been in the hands of chefs Marco Bianco and Mauro Calzolari. Hand-rolled fresh pasta, salumi and cheese from the great counter, local wines. True home cooking, served the old way.">Dal 2007 la cucina è nelle mani degli chef Marco Bianco e Mauro Calzolari. Paste fresche tirate a mano, salumi e formaggi dal grande banco, vini del territorio. La vera cucina di casa, servita come una volta.</p>
       </div>
@@ -235,10 +237,26 @@
   <div aria-hidden="true" class="absolute inset-0 scrim-soft"></div>
   <div class="relative mx-auto max-w-5xl px-5 md:px-8">
     <div class="glass rounded-[1.6rem] p-6 sm:p-9 md:p-12">
+
+      <!-- Menu header -->
       <div class="text-center max-w-2xl mx-auto">
         <p class="reveal text-xs uppercase tracking-[.28em] text-gold font-semibold" data-it="Il menù" data-en="The menu">Il menù</p>
-        <h2 class="reveal mt-4 font-display font-medium leading-tight tracking-[-.015em] text-[clamp(2.2rem,5vw,3.6rem)] text-cream" data-it="La cucina di Modena, fatta in casa." data-en="The cooking of Modena, made in house.">La cucina di Modena, fatta in casa.</h2>
-        <p class="reveal mt-4 text-cream/70" data-it="Aperitivo del Fantino: Spritz modenese (Aperol o Lambrusco) con stuzzichini · € 7,00" data-en="Aperitivo del Fantino: Modenese spritz (Aperol or Lambrusco) with nibbles · € 7,00">Aperitivo del Fantino: Spritz modenese (Aperol o Lambrusco) con stuzzichini · € 7,00</p>
+        <h2 class="reveal mt-4 font-display font-medium leading-tight tracking-[-.015em] text-[clamp(2.2rem,5vw,3.6rem)] text-forest" data-it="La cucina di Modena, fatta in casa." data-en="The cooking of Modena, made in house.">La cucina di Modena, fatta in casa.</h2>
+      </div>
+
+      <!-- APERITIVO -->
+      <div class="mt-10 reveal">
+        <h3 class="font-display text-2xl text-gold flex items-center gap-3"><span data-it="Aperitivo" data-en="Aperitivo">Aperitivo</span><span class="deco-rule flex-1"></span></h3>
+        <ul class="mt-5">
+          <li>
+            <div class="flex items-baseline">
+              <span class="font-display text-lg text-forest" data-it="Aperitivo del Fantino" data-en="Aperitivo del Fantino">Aperitivo del Fantino</span>
+              <span class="leader"></span>
+              <span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 7,00</span>
+            </div>
+            <p class="mt-1 text-sm text-forest/60" data-it="Spritz modenese (Aperol o Lambrusco) con stuzzichini" data-en="Modenese spritz (Aperol or Lambrusco) with nibbles">Spritz modenese (Aperol o Lambrusco) con stuzzichini</p>
+          </li>
+        </ul>
       </div>
 
       <div class="mt-12 grid md:grid-cols-2 gap-x-14 gap-y-12">
@@ -247,10 +265,38 @@
         <div class="reveal">
           <h3 class="font-display text-2xl text-gold flex items-center gap-3"><span data-it="Antipasti" data-en="Starters">Antipasti</span><span class="deco-rule flex-1"></span></h3>
           <ul class="mt-5 space-y-5">
-            <li><div class="flex items-baseline"><span class="font-display text-lg text-cream" data-it="Vecchia Modena" data-en="Vecchia Modena">Vecchia Modena</span><span class="leader"></span><span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 13,00</span></div><p class="mt-1 text-sm text-cream/65" data-it="Salame del contadino, ciccioli montanari, Parmigiano Reggiano, aceto balsamico di Modena e tigelle" data-en="Farmer's salami, mountain ciccioli, Parmigiano Reggiano, balsamic vinegar of Modena and tigelle">Salame del contadino, ciccioli montanari, Parmigiano Reggiano, aceto balsamico di Modena e tigelle</p></li>
-            <li><div class="flex items-baseline"><span class="font-display text-lg text-cream" data-it="Doppietta" data-en="Doppietta">Doppietta</span><span class="leader"></span><span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 12,00</span></div><p class="mt-1 text-sm text-cream/65" data-it="Gnocco fritto e prosciutto crudo di Modena" data-en="Gnocco fritto and Modena cured ham">Gnocco fritto e prosciutto crudo di Modena</p></li>
-            <li><div class="flex items-baseline"><span class="font-display text-lg text-cream" data-it="Tigelle e gnocco fritto" data-en="Tigelle and gnocco fritto">Tigelle e gnocco fritto</span><span class="leader"></span><span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 14,00</span></div><p class="mt-1 text-sm text-cream/65" data-it="Con salumi misti e stracchino" data-en="With mixed cured meats and stracchino">Con salumi misti e stracchino</p></li>
-            <li><div class="flex items-baseline"><span class="font-display text-lg text-cream" data-it="Duca d'Este" data-en="Duca d'Este">Duca d'Este</span><span class="leader"></span><span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 12,00</span></div><p class="mt-1 text-sm text-cream/65" data-it="Prosciutto crudo di Modena, Parmigiano Reggiano 24 mesi, aceto balsamico di Modena" data-en="Modena cured ham, 24-month Parmigiano Reggiano, balsamic vinegar of Modena">Prosciutto crudo di Modena, Parmigiano Reggiano 24 mesi, aceto balsamico di Modena</p></li>
+            <li>
+              <div class="flex items-baseline">
+                <span class="font-display text-lg text-forest" data-it="Vecchia Modena" data-en="Vecchia Modena">Vecchia Modena</span>
+                <span class="leader"></span>
+                <span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 13,00</span><span class="allergen">A,D</span>
+              </div>
+              <p class="mt-1 text-sm text-forest/60" data-it="Salame del contadino, ciccioli montanari, Parmigiano Reggiano, aceto balsamico di Modena e tigelle" data-en="Farmer's salami, mountain ciccioli, Parmigiano Reggiano, balsamic vinegar of Modena and tigelle">Salame del contadino, ciccioli montanari, Parmigiano Reggiano, aceto balsamico di Modena e tigelle</p>
+            </li>
+            <li>
+              <div class="flex items-baseline">
+                <span class="font-display text-lg text-forest" data-it="Doppietta" data-en="Doppietta">Doppietta</span>
+                <span class="leader"></span>
+                <span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 12,00</span>
+              </div>
+              <p class="mt-1 text-sm text-forest/60" data-it="Gnocco fritto e prosciutto crudo di Modena" data-en="Gnocco fritto and Modena cured ham">Gnocco fritto e prosciutto crudo di Modena</p>
+            </li>
+            <li>
+              <div class="flex items-baseline">
+                <span class="font-display text-lg text-forest" data-it="Tigelle e gnocco fritto" data-en="Tigelle and gnocco fritto">Tigelle e gnocco fritto</span>
+                <span class="leader"></span>
+                <span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 14,00</span>
+              </div>
+              <p class="mt-1 text-sm text-forest/60" data-it="Con salumi misti e stracchino" data-en="With mixed cured meats and stracchino">Con salumi misti e stracchino</p>
+            </li>
+            <li>
+              <div class="flex items-baseline">
+                <span class="font-display text-lg text-forest" data-it="Duca d'Este" data-en="Duca d'Este">Duca d'Este</span>
+                <span class="leader"></span>
+                <span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 12,00</span>
+              </div>
+              <p class="mt-1 text-sm text-forest/60" data-it="Prosciutto crudo di Modena, Parmigiano Reggiano 24 mesi, aceto balsamico di Modena" data-en="Modena cured ham, 24-month Parmigiano Reggiano, balsamic vinegar of Modena">Prosciutto crudo di Modena, Parmigiano Reggiano 24 mesi, aceto balsamico di Modena</p>
+            </li>
           </ul>
         </div>
 
@@ -258,13 +304,16 @@
         <div class="reveal">
           <h3 class="font-display text-2xl text-gold flex items-center gap-3"><span data-it="Primi piatti" data-en="First courses">Primi piatti</span><span class="deco-rule flex-1"></span></h3>
           <ul class="mt-5 space-y-4">
-            <li class="flex items-baseline"><span class="font-display text-lg text-cream" data-it="Tortellini della Bice (in brodo)" data-en="Tortellini della Bice (in broth)">Tortellini della Bice (in brodo)</span><span class="leader"></span><span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 14,00</span></li>
-            <li class="flex items-baseline"><span class="font-display text-lg text-cream" data-it="Tortelloni di ricotta e spinaci, burro e salvia" data-en="Ricotta &amp; spinach tortelloni, butter and sage">Tortelloni di ricotta e spinaci, burro e salvia</span><span class="leader"></span><span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 12,00</span></li>
-            <li class="flex items-baseline"><span class="font-display text-lg text-cream" data-it="Ravioli di zucca, burro e salvia" data-en="Pumpkin ravioli, butter and sage">Ravioli di zucca, burro e salvia</span><span class="leader"></span><span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 12,00</span></li>
-            <li class="flex items-baseline"><span class="font-display text-lg text-cream" data-it="Strigoli con funghi porcini e pancetta" data-en="Strigoli with porcini and pancetta">Strigoli con funghi porcini e pancetta</span><span class="leader"></span><span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 12,00</span></li>
-            <li class="flex items-baseline"><span class="font-display text-lg text-cream" data-it="Gnocchetti del Fantino fatti in casa" data-en="House-made Gnocchetti del Fantino">Gnocchetti del Fantino fatti in casa</span><span class="leader"></span><span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 12,00</span></li>
-            <li class="flex items-baseline"><span class="font-display text-lg text-cream" data-it="Primo del giorno" data-en="First course of the day">Primo del giorno</span><span class="leader"></span><span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 12/14</span></li>
-            <li><div class="flex items-baseline"><span class="font-display text-lg text-cream" data-it="Tris di primi" data-en="Trio of first courses">Tris di primi</span><span class="leader"></span><span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 15,00</span></div><p class="mt-1 text-sm text-cream/65" data-it="Minimo 2 persone, esclusi tortellini · a persona" data-en="Minimum 2 people, tortellini excluded · per person">Minimo 2 persone, esclusi tortellini · a persona</p></li>
+            <li class="flex items-baseline"><span class="font-display text-lg text-forest" data-it="Tortellini della Bice (in brodo)" data-en="Tortellini della Bice (in broth)">Tortellini della Bice (in brodo)</span><span class="leader"></span><span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 14,00</span></li>
+            <li class="flex items-baseline"><span class="font-display text-lg text-forest" data-it="Tortelloni di ricotta e spinaci, burro e salvia" data-en="Ricotta &amp; spinach tortelloni, butter and sage">Tortelloni di ricotta e spinaci, burro e salvia</span><span class="leader"></span><span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 12,00</span></li>
+            <li class="flex items-baseline"><span class="font-display text-lg text-forest" data-it="Ravioli di zucca, burro e salvia" data-en="Pumpkin ravioli, butter and sage">Ravioli di zucca, burro e salvia</span><span class="leader"></span><span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 12,00</span></li>
+            <li class="flex items-baseline"><span class="font-display text-lg text-forest" data-it="Strigoli con funghi porcini e pancetta" data-en="Strigoli with porcini and pancetta">Strigoli con funghi porcini e pancetta</span><span class="leader"></span><span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 12,00</span></li>
+            <li class="flex items-baseline"><span class="font-display text-lg text-forest" data-it="Gnocchetti del Fantino fatti in casa" data-en="House-made Gnocchetti del Fantino">Gnocchetti del Fantino fatti in casa</span><span class="leader"></span><span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 12,00</span></li>
+            <li class="flex items-baseline"><span class="font-display text-lg text-forest" data-it="Primo del giorno" data-en="First course of the day">Primo del giorno</span><span class="leader"></span><span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 12/14</span></li>
+            <li>
+              <div class="flex items-baseline"><span class="font-display text-lg text-forest" data-it="Tris di primi" data-en="Trio of first courses">Tris di primi</span><span class="leader"></span><span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 15,00</span></div>
+              <p class="mt-1 text-sm text-forest/60" data-it="Minimo 2 persone, esclusi tortellini · a persona" data-en="Minimum 2 people, tortellini excluded · per person">Minimo 2 persone, esclusi tortellini · a persona</p>
+            </li>
           </ul>
         </div>
 
@@ -273,13 +322,22 @@
           <h3 class="font-display text-2xl text-gold flex items-center gap-3"><span data-it="Secondi piatti" data-en="Main courses">Secondi piatti</span><span class="deco-rule flex-1"></span></h3>
           <ul class="mt-5 space-y-5">
             <li>
-              <span class="inline-flex items-center gap-2 rounded-full bg-green/25 text-gold-soft px-3 py-1 text-xs font-semibold uppercase tracking-[.14em]" data-it="Il più richiesto" data-en="Most requested">Il più richiesto</span>
-              <div class="mt-2 flex items-baseline"><span class="font-display text-lg text-cream" data-it="Costine di maiale brasate al Lambrusco (Sorbarette)" data-en="Pork ribs braised in Lambrusco (Sorbarette)">Costine di maiale brasate al Lambrusco (Sorbarette)</span><span class="leader"></span><span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 12,00</span></div>
+              <span class="inline-flex items-center gap-2 rounded-full bg-teal/15 text-teal-soft px-3 py-1 text-xs font-semibold uppercase tracking-[.14em]" data-it="Il più richiesto" data-en="Most requested">Il più richiesto</span>
+              <div class="mt-2 flex items-baseline"><span class="font-display text-lg text-forest" data-it="Costine di maiale brasate al Lambrusco (Sorbarette)" data-en="Pork ribs braised in Lambrusco (Sorbarette)">Costine di maiale brasate al Lambrusco (Sorbarette)</span><span class="leader"></span><span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 12,00</span></div>
             </li>
-            <li><div class="flex items-baseline"><span class="font-display text-lg text-cream" data-it="Polpette di vitello" data-en="Veal meatballs">Polpette di vitello</span><span class="leader"></span><span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 12,00</span></div><p class="mt-1 text-sm text-cream/65" data-it="Alla crema di Parmigiano e ciccioli" data-en="In Parmesan cream with ciccioli">Alla crema di Parmigiano e ciccioli</p></li>
-            <li><div class="flex items-baseline"><span class="font-display text-lg text-cream" data-it="Tartare di fassona piemontese (120 gr)" data-en="Piedmontese fassona tartare (120 g)">Tartare di fassona piemontese (120 gr)</span><span class="leader"></span><span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 14,00</span></div><p class="mt-1 text-sm text-cream/65" data-it="Con scaglie di Parmigiano Reggiano, accompagnata da 4 tigelle" data-en="With Parmigiano Reggiano flakes, served with 4 tigelle">Con scaglie di Parmigiano Reggiano, accompagnata da 4 tigelle</p></li>
-            <li><div class="flex items-baseline"><span class="font-display text-lg text-cream" data-it="Selezione di formaggi" data-en="Cheese selection">Selezione di formaggi</span><span class="leader"></span><span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 14,00</span></div><p class="mt-1 text-sm text-cream/65" data-it="Con aceto balsamico di Modena, accompagnata da 4 tigelle" data-en="With balsamic vinegar of Modena, served with 4 tigelle">Con aceto balsamico di Modena, accompagnata da 4 tigelle</p></li>
-            <li class="flex items-baseline"><span class="font-display text-lg text-cream" data-it="Secondo del giorno" data-en="Main course of the day">Secondo del giorno</span><span class="leader"></span><span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 12/14</span></li>
+            <li>
+              <div class="flex items-baseline"><span class="font-display text-lg text-forest" data-it="Polpette di vitello" data-en="Veal meatballs">Polpette di vitello</span><span class="leader"></span><span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 12,00</span><span class="allergen">A,C</span></div>
+              <p class="mt-1 text-sm text-forest/60" data-it="Alla crema di Parmigiano e ciccioli" data-en="In Parmesan cream with ciccioli">Alla crema di Parmigiano e ciccioli</p>
+            </li>
+            <li>
+              <div class="flex items-baseline"><span class="font-display text-lg text-forest" data-it="Tartare di fassona piemontese (120 gr)" data-en="Piedmontese fassona tartare (120 g)">Tartare di fassona piemontese (120 gr)</span><span class="leader"></span><span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 14,00</span><span class="allergen">A,C</span></div>
+              <p class="mt-1 text-sm text-forest/60" data-it="Con scaglie di Parmigiano Reggiano, accompagnata da 4 tigelle" data-en="With Parmigiano Reggiano flakes, served with 4 tigelle">Con scaglie di Parmigiano Reggiano, accompagnata da 4 tigelle</p>
+            </li>
+            <li>
+              <div class="flex items-baseline"><span class="font-display text-lg text-forest" data-it="Selezione di formaggi" data-en="Cheese selection">Selezione di formaggi</span><span class="leader"></span><span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 14,00</span><span class="allergen">A,E</span></div>
+              <p class="mt-1 text-sm text-forest/60" data-it="Caciotta, pecorino, Parmigiano Reggiano, Gorgonzola, stracchino, con aceto balsamico di Modena, accompagnata da 4 tigelle" data-en="Caciotta, pecorino, Parmigiano Reggiano, Gorgonzola, stracchino, with balsamic vinegar of Modena, served with 4 tigelle">Caciotta, pecorino, Parmigiano Reggiano, Gorgonzola, stracchino, con aceto balsamico di Modena, accompagnata da 4 tigelle</p>
+            </li>
+            <li class="flex items-baseline"><span class="font-display text-lg text-forest" data-it="Secondo del giorno" data-en="Main course of the day">Secondo del giorno</span><span class="leader"></span><span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 12/14</span><span class="allergen">A,B,C,E</span></li>
           </ul>
         </div>
 
@@ -287,92 +345,92 @@
         <div class="reveal">
           <h3 class="font-display text-2xl text-gold flex items-center gap-3"><span data-it="Contorni" data-en="Sides">Contorni</span><span class="deco-rule flex-1"></span></h3>
           <ul class="mt-5 space-y-4">
-            <li class="flex items-baseline"><span class="font-display text-lg text-cream" data-it="Insalata mista" data-en="Mixed salad">Insalata mista</span><span class="leader"></span><span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 5,00</span></li>
-            <li class="flex items-baseline"><span class="font-display text-lg text-cream" data-it="Patate al forno, aglio e rosmarino" data-en="Roast potatoes, garlic and rosemary">Patate al forno, aglio e rosmarino</span><span class="leader"></span><span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 5,00</span></li>
-            <li class="flex items-baseline"><span class="font-display text-lg text-cream" data-it="Zucchine grigliate" data-en="Grilled zucchini">Zucchine grigliate</span><span class="leader"></span><span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 5,00</span></li>
-            <li class="flex items-baseline"><span class="font-display text-lg text-cream" data-it="Giardiniera artigianale" data-en="House giardiniera">Giardiniera artigianale</span><span class="leader"></span><span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 5,00</span></li>
-            <li class="flex items-baseline"><span class="font-display text-lg text-cream" data-it="Contorno del giorno" data-en="Side of the day">Contorno del giorno</span><span class="leader"></span><span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 5,00</span></li>
-            <li class="flex items-baseline pt-2 border-t border-line"><span class="text-cream/70" data-it="Coperto" data-en="Cover charge">Coperto</span><span class="leader"></span><span class="text-sm font-semibold text-cream/70 tabular-nums shrink-0">€ 2,50</span></li>
+            <li class="flex items-baseline"><span class="font-display text-lg text-forest" data-it="Insalata mista" data-en="Mixed salad">Insalata mista</span><span class="leader"></span><span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 5,00</span></li>
+            <li class="flex items-baseline"><span class="font-display text-lg text-forest" data-it="Patate al forno, aglio e rosmarino" data-en="Roast potatoes, garlic and rosemary">Patate al forno, aglio e rosmarino</span><span class="leader"></span><span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 5,00</span></li>
+            <li class="flex items-baseline"><span class="font-display text-lg text-forest" data-it="Zucchine grigliate" data-en="Grilled zucchini">Zucchine grigliate</span><span class="leader"></span><span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 5,00</span></li>
+            <li class="flex items-baseline"><span class="font-display text-lg text-forest" data-it="Giardiniera artigianale" data-en="House giardiniera">Giardiniera artigianale</span><span class="leader"></span><span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 5,00</span></li>
+            <li class="flex items-baseline"><span class="font-display text-lg text-forest" data-it="Contorno del giorno" data-en="Side of the day">Contorno del giorno</span><span class="leader"></span><span class="text-sm font-semibold text-gold tabular-nums shrink-0">€ 5,00</span></li>
+            <li class="flex items-baseline pt-2 border-t border-line"><span class="text-forest/60" data-it="Coperto" data-en="Cover charge">Coperto</span><span class="leader"></span><span class="text-sm font-semibold text-forest/60 tabular-nums shrink-0">€ 2,50</span></li>
           </ul>
         </div>
       </div>
 
       <!-- PIATTO UNICO (featured) -->
-      <div class="reveal mt-12 rounded-2xl border border-gold/30 bg-green/15 p-6 md:p-8">
+      <div class="reveal mt-12 rounded-2xl border border-gold/30 bg-linen-raised/50 p-6 md:p-8">
         <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1">
           <h3 class="font-display text-2xl text-gold" data-it="Piatto unico della tradizione" data-en="The traditional one-plate feast">Piatto unico della tradizione</h3>
-          <span class="text-lg font-semibold text-gold tabular-nums">€ 20,00</span>
+          <span class="text-lg font-semibold text-gold tabular-nums">€ 20,00</span><span class="allergen">A,D</span>
         </div>
-        <p class="mt-3 text-cream/85 leading-relaxed max-w-3xl" data-it="Gnocco fritto e tigelle con tagliere di salumi misti, stracchino, lardo, Parmigiano Reggiano grattugiato e una ciotola di costine di maiale brasate al Lambrusco." data-en="Gnocco fritto and tigelle with a board of mixed cured meats, stracchino, lardo, grated Parmigiano Reggiano and a bowl of pork ribs braised in Lambrusco.">Gnocco fritto e tigelle con tagliere di salumi misti, stracchino, lardo, Parmigiano Reggiano grattugiato e una ciotola di costine di maiale brasate al Lambrusco.</p>
+        <p class="mt-3 text-forest/80 leading-relaxed max-w-3xl" data-it="Gnocco fritto e tigelle con tagliere di salumi misti, stracchino, lardo, Parmigiano Reggiano grattugiato e una ciotola di costine di maiale brasate al Lambrusco." data-en="Gnocco fritto and tigelle with a board of mixed cured meats, stracchino, lardo, grated Parmigiano Reggiano and a bowl of pork ribs braised in Lambrusco.">Gnocco fritto e tigelle con tagliere di salumi misti, stracchino, lardo, Parmigiano Reggiano grattugiato e una ciotola di costine di maiale brasate al Lambrusco.</p>
       </div>
 
       <!-- TASTING MENUS -->
       <div class="reveal mt-10 grid md:grid-cols-2 gap-6">
-        <div class="rounded-2xl border border-line bg-pine/40 p-6 md:p-8">
-          <div class="flex items-baseline justify-between gap-3"><h3 class="font-display text-xl text-cream" data-it="Menù degustazione 1" data-en="Tasting menu 1">Menù degustazione 1</h3><span class="font-display text-2xl text-gold tabular-nums">€ 55</span></div>
-          <p class="text-xs uppercase tracking-[.16em] text-cream/55 mt-1" data-it="A persona · min 2 · per tutto il tavolo" data-en="Per person · min 2 · whole table">A persona · min 2 · per tutto il tavolo</p>
-          <ul class="mt-4 space-y-2.5 text-sm text-cream/85 leading-relaxed list-disc pl-4">
-            <li data-it="Bis di primi a vostra scelta (esclusi tortellini in brodo)" data-en="Two first courses of your choice (tortellini in broth excluded)">Bis di primi a vostra scelta (esclusi tortellini in brodo)</li>
-            <li data-it="Gnocco fritto e tigelle con tagliere di salumi, lardo e Parmigiano; costine brasate al Lambrusco; patate al forno" data-en="Gnocco fritto and tigelle with a board of cured meats, lardo and Parmesan; ribs braised in Lambrusco; roast potatoes">Gnocco fritto e tigelle con tagliere di salumi, lardo e Parmigiano; costine brasate al Lambrusco; patate al forno</li>
+        <div class="rounded-2xl border border-line bg-linen-surface/60 p-6 md:p-8">
+          <div class="flex items-baseline justify-between gap-3"><h3 class="font-display text-xl text-forest" data-it="Menù degustazione 1" data-en="Tasting menu 1">Menù degustazione 1</h3><span class="font-display text-2xl text-gold tabular-nums">€ 55</span></div>
+          <p class="text-xs uppercase tracking-[.16em] text-forest/45 mt-1" data-it="A persona · min 2 · per tutto il tavolo" data-en="Per person · min 2 · whole table">A persona · min 2 · per tutto il tavolo</p>
+          <ul class="mt-4 space-y-2.5 text-sm text-forest/75 leading-relaxed list-disc pl-4">
+            <li data-it="Bis di primi a vostra scelta (esclusi tortellini in brodo)" data-en="Two first courses of your choice (tortellini in broth excluded)">Bis di primi a vostra scelta (esclusi tortellini in brodo) <span class="allergen">A,B,C,D</span></li>
+            <li data-it="Gnocco fritto e tigelle con tagliere di salumi, lardo e Parmigiano; costine brasate al Lambrusco; patate al forno" data-en="Gnocco fritto and tigelle with a board of cured meats, lardo and Parmesan; ribs braised in Lambrusco; roast potatoes">Gnocco fritto e tigelle con tagliere di salumi, lardo e Parmigiano; costine brasate al Lambrusco; patate al forno <span class="allergen">A,C</span></li>
             <li data-it="Vino (una bottiglia ogni 3 persone); acqua, limoncino o nocino, caffè" data-en="Wine (one bottle for every 3 guests); water, limoncino or nocino, coffee">Vino (una bottiglia ogni 3 persone); acqua, limoncino o nocino, caffè</li>
             <li data-it="Coperto incluso" data-en="Cover charge included">Coperto incluso</li>
           </ul>
         </div>
-        <div class="rounded-2xl border border-line bg-pine/40 p-6 md:p-8">
-          <div class="flex items-baseline justify-between gap-3"><h3 class="font-display text-xl text-cream" data-it="Menù degustazione 2" data-en="Tasting menu 2">Menù degustazione 2</h3><span class="font-display text-2xl text-gold tabular-nums">€ 40</span></div>
-          <p class="text-xs uppercase tracking-[.16em] text-cream/55 mt-1" data-it="A persona · min 2 · per tutto il tavolo" data-en="Per person · min 2 · whole table">A persona · min 2 · per tutto il tavolo</p>
-          <ul class="mt-4 space-y-2.5 text-sm text-cream/85 leading-relaxed list-disc pl-4">
+        <div class="rounded-2xl border border-line bg-linen-surface/60 p-6 md:p-8">
+          <div class="flex items-baseline justify-between gap-3"><h3 class="font-display text-xl text-forest" data-it="Menù degustazione 2" data-en="Tasting menu 2">Menù degustazione 2</h3><span class="font-display text-2xl text-gold tabular-nums">€ 40</span></div>
+          <p class="text-xs uppercase tracking-[.16em] text-forest/45 mt-1" data-it="A persona · min 2 · per tutto il tavolo" data-en="Per person · min 2 · whole table">A persona · min 2 · per tutto il tavolo</p>
+          <ul class="mt-4 space-y-2.5 text-sm text-forest/75 leading-relaxed list-disc pl-4">
             <li data-it="Spritz modenese con ciccioli secchi" data-en="Modenese spritz with dried ciccioli">Spritz modenese con ciccioli secchi</li>
-            <li data-it="Tagliere con salumi nostrani, Parmigiano e giardiniera, con gnocco e tigelle" data-en="Board of local cured meats, Parmesan and giardiniera, with gnocco and tigelle">Tagliere con salumi nostrani, Parmigiano e giardiniera, con gnocco e tigelle</li>
+            <li data-it="Tagliere con salumi nostrani, Parmigiano e giardiniera, con gnocco e tigelle" data-en="Board of local cured meats, Parmesan and giardiniera, with gnocco and tigelle">Tagliere con salumi nostrani, Parmigiano e giardiniera, con gnocco e tigelle <span class="allergen">A,D</span></li>
             <li data-it="Bis di carne (costine al Lambrusco e un secondo del giorno); patate al forno" data-en="Two meat dishes (ribs in Lambrusco and a main of the day); roast potatoes">Bis di carne (costine al Lambrusco e un secondo del giorno); patate al forno</li>
             <li data-it="Vino (una bottiglia ogni 3 persone); acqua, limoncino o nocino, caffè; coperto incluso" data-en="Wine (one bottle for every 3 guests); water, limoncino or nocino, coffee; cover included">Vino (una bottiglia ogni 3 persone); acqua, limoncino o nocino, caffè; coperto incluso</li>
           </ul>
         </div>
       </div>
 
-      <p class="reveal mt-8 text-xs text-cream/55 leading-relaxed" data-it="Allergeni: A. glutine · B. uova e derivati · C. latte e derivati · D. sedano e derivati · E. anidride solforosa e solfiti. Alcune materie prime potrebbero essere congelate o surgelate all'origine. Il menù può variare con la stagione e il mercato." data-en="Allergens: A. gluten · B. eggs · C. milk/dairy · D. celery · E. sulphur dioxide and sulphites. Some ingredients may be frozen at origin. The menu may change with the season and the market.">Allergeni: A. glutine · B. uova e derivati · C. latte e derivati · D. sedano e derivati · E. anidride solforosa e solfiti. Alcune materie prime potrebbero essere congelate o surgelate all'origine. Il menù può variare con la stagione e il mercato.</p>
+      <p class="reveal mt-8 text-xs text-forest/45 leading-relaxed" data-it="Allergeni: A. glutine · B. uova e derivati · C. latte e derivati · D. sedano e derivati · E. anidride solforosa e solfiti. Alcune materie prime potrebbero essere congelate o surgelate all'origine. Il menù può variare con la stagione e il mercato." data-en="Allergens: A. gluten · B. eggs · C. milk/dairy · D. celery · E. sulphur dioxide and sulphites. Some ingredients may be frozen at origin. The menu may change with the season and the market.">Allergeni: A. glutine · B. uova e derivati · C. latte e derivati · D. sedano e derivati · E. anidride solforosa e solfiti. Alcune materie prime potrebbero essere congelate o surgelate all'origine. Il menù può variare con la stagione e il mercato.</p>
 
       <div class="mt-10 text-center">
-        <a href="tel:+39059223646" class="inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 text-sm font-semibold text-pine hover:bg-gold-soft transition-colors cursor-pointer"><span data-it="Prenota un tavolo" data-en="Reserve a table">Prenota un tavolo</span></a>
+        <a href="tel:+39059223646" class="inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 text-sm font-semibold text-forest hover:bg-gold-soft transition-colors cursor-pointer"><span data-it="Prenota un tavolo" data-en="Reserve a table">Prenota un tavolo</span></a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- GALLERIA -->
-<section id="galleria" class="scroll-mt-24 py-20 md:py-32 md:min-h-[100svh] md:flex md:flex-col md:justify-center bg-pine-surface border-y border-line">
+<section id="galleria" class="scroll-mt-24 py-20 md:py-32 md:min-h-[100svh] md:flex md:flex-col md:justify-center bg-linen-surface border-y border-line">
   <div class="mx-auto max-w-content px-5 md:px-8">
     <p class="reveal text-xs uppercase tracking-[.28em] text-gold font-semibold" data-it="Galleria" data-en="Gallery">Galleria</p>
-    <h2 class="reveal mt-4 font-display font-medium text-[clamp(2rem,4.5vw,3.2rem)] text-cream" data-it="Dalla cucina, alla tavola." data-en="From the kitchen, to the table.">Dalla cucina, alla tavola.</h2>
+    <h2 class="reveal mt-4 font-display font-medium text-[clamp(2rem,4.5vw,3.2rem)] text-forest" data-it="Dalla cucina, alla tavola." data-en="From the kitchen, to the table.">Dalla cucina, alla tavola.</h2>
     <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-      <button type="button" class="gitem reveal ph group col-span-2 md:row-span-2 aspect-square md:aspect-auto rounded-2xl overflow-hidden ring-1 ring-gold/20 cursor-pointer" data-full="images/g1.jpg" data-cap-it="Tagliere di gnocco fritto e salumi" data-cap-en="Board of gnocco fritto and cured meats" aria-label="Ingrandisci"><img src="images/g1.jpg" alt="Tagliere di gnocco fritto e salumi" loading="lazy" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="imgFail(this)" /></button>
-      <button type="button" class="gitem reveal ph group aspect-square rounded-2xl overflow-hidden ring-1 ring-gold/20 cursor-pointer" data-full="images/g2.jpg" data-cap-it="Salumi affettati al momento" data-cap-en="Cured meats sliced to order" aria-label="Ingrandisci"><img src="images/g2.jpg" alt="Salumi affettati" loading="lazy" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="imgFail(this)" /></button>
-      <button type="button" class="gitem reveal ph group aspect-square rounded-2xl overflow-hidden ring-1 ring-gold/20 cursor-pointer" data-full="images/g3.jpg" data-cap-it="Tortelloni burro e salvia" data-cap-en="Tortelloni with butter and sage" aria-label="Ingrandisci"><img src="images/g3.jpg" alt="Tortelloni burro e salvia" loading="lazy" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="imgFail(this)" /></button>
-      <button type="button" class="gitem reveal ph group aspect-square rounded-2xl overflow-hidden ring-1 ring-gold/20 cursor-pointer" data-full="images/g4.jpg" data-cap-it="Le Sorbarette, costine al Lambrusco" data-cap-en="Le Sorbarette, ribs in Lambrusco" aria-label="Ingrandisci"><img src="images/g4.jpg" alt="Costine brasate al Lambrusco" loading="lazy" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="imgFail(this)" /></button>
-      <button type="button" class="gitem reveal ph group aspect-square rounded-2xl overflow-hidden ring-1 ring-gold/20 cursor-pointer" data-full="images/g5.jpg" data-cap-it="Pasta fresca con fagiolini" data-cap-en="Fresh pasta with green beans" aria-label="Ingrandisci"><img src="images/g5.jpg" alt="Pasta fresca con fagiolini" loading="lazy" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="imgFail(this)" /></button>
-      <button type="button" class="gitem reveal ph group aspect-square rounded-2xl overflow-hidden ring-1 ring-gold/20 cursor-pointer" data-full="images/g6.jpg" data-cap-it="Tigelle calde" data-cap-en="Warm tigelle" aria-label="Ingrandisci"><img src="images/g6.jpg" alt="Tigelle" loading="lazy" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="imgFail(this)" /></button>
-      <button type="button" class="gitem reveal ph group aspect-square rounded-2xl overflow-hidden ring-1 ring-gold/20 cursor-pointer" data-full="images/g7.jpg" data-cap-it="La sala, tra i tavoli di legno" data-cap-en="The dining room, among the wooden tables" aria-label="Ingrandisci"><img src="images/g7.jpg" alt="La sala della trattoria" loading="lazy" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="imgFail(this)" /></button>
-      <button type="button" class="gitem reveal ph group aspect-square rounded-2xl overflow-hidden ring-1 ring-gold/20 cursor-pointer" data-full="images/g8.jpg" data-cap-it="Zuppa di ceci" data-cap-en="Chickpea stew" aria-label="Ingrandisci"><img src="images/g8.jpg" alt="Zuppa di ceci" loading="lazy" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="imgFail(this)" /></button>
-      <button type="button" class="gitem reveal ph group aspect-square rounded-2xl overflow-hidden ring-1 ring-gold/20 cursor-pointer" data-full="images/g9.jpg" data-cap-it="Dolce della casa" data-cap-en="House dessert" aria-label="Ingrandisci"><img src="images/g9.jpg" alt="Dolce della casa" loading="lazy" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="imgFail(this)" /></button>
+      <button type="button" class="gitem reveal ph group col-span-2 md:row-span-2 aspect-square md:aspect-auto rounded-2xl overflow-hidden ring-1 ring-teal/20 cursor-pointer" data-full="images/g1.jpg" data-cap-it="Tagliere di gnocco fritto e salumi" data-cap-en="Board of gnocco fritto and cured meats" aria-label="Ingrandisci"><img src="images/g1.jpg" alt="Tagliere di gnocco fritto e salumi" loading="lazy" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="imgFail(this)" /></button>
+      <button type="button" class="gitem reveal ph group aspect-square rounded-2xl overflow-hidden ring-1 ring-teal/20 cursor-pointer" data-full="images/g2.jpg" data-cap-it="Salumi affettati al momento" data-cap-en="Cured meats sliced to order" aria-label="Ingrandisci"><img src="images/g2.jpg" alt="Salumi affettati" loading="lazy" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="imgFail(this)" /></button>
+      <button type="button" class="gitem reveal ph group aspect-square rounded-2xl overflow-hidden ring-1 ring-teal/20 cursor-pointer" data-full="images/g3.jpg" data-cap-it="Tortelloni burro e salvia" data-cap-en="Tortelloni with butter and sage" aria-label="Ingrandisci"><img src="images/g3.jpg" alt="Tortelloni burro e salvia" loading="lazy" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="imgFail(this)" /></button>
+      <button type="button" class="gitem reveal ph group aspect-square rounded-2xl overflow-hidden ring-1 ring-teal/20 cursor-pointer" data-full="images/g4.jpg" data-cap-it="Le Sorbarette, costine al Lambrusco" data-cap-en="Le Sorbarette, ribs in Lambrusco" aria-label="Ingrandisci"><img src="images/g4.jpg" alt="Costine brasate al Lambrusco" loading="lazy" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="imgFail(this)" /></button>
+      <button type="button" class="gitem reveal ph group aspect-square rounded-2xl overflow-hidden ring-1 ring-teal/20 cursor-pointer" data-full="images/g5.jpg" data-cap-it="Pasta fresca con fagiolini" data-cap-en="Fresh pasta with green beans" aria-label="Ingrandisci"><img src="images/g5.jpg" alt="Pasta fresca con fagiolini" loading="lazy" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="imgFail(this)" /></button>
+      <button type="button" class="gitem reveal ph group aspect-square rounded-2xl overflow-hidden ring-1 ring-teal/20 cursor-pointer" data-full="images/g6.jpg" data-cap-it="Tigelle calde" data-cap-en="Warm tigelle" aria-label="Ingrandisci"><img src="images/g6.jpg" alt="Tigelle" loading="lazy" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="imgFail(this)" /></button>
+      <button type="button" class="gitem reveal ph group aspect-square rounded-2xl overflow-hidden ring-1 ring-teal/20 cursor-pointer" data-full="images/g7.jpg" data-cap-it="La sala, tra i tavoli di legno" data-cap-en="The dining room, among the wooden tables" aria-label="Ingrandisci"><img src="images/g7.jpg" alt="La sala della trattoria" loading="lazy" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="imgFail(this)" /></button>
+      <button type="button" class="gitem reveal ph group aspect-square rounded-2xl overflow-hidden ring-1 ring-teal/20 cursor-pointer" data-full="images/g8.jpg" data-cap-it="Zuppa di ceci" data-cap-en="Chickpea stew" aria-label="Ingrandisci"><img src="images/g8.jpg" alt="Zuppa di ceci" loading="lazy" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="imgFail(this)" /></button>
+      <button type="button" class="gitem reveal ph group aspect-square rounded-2xl overflow-hidden ring-1 ring-teal/20 cursor-pointer" data-full="images/g9.jpg" data-cap-it="Dolce della casa" data-cap-en="House dessert" aria-label="Ingrandisci"><img src="images/g9.jpg" alt="Dolce della casa" loading="lazy" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="imgFail(this)" /></button>
     </div>
   </div>
 </section>
 
 <!-- VISITA -->
-<section id="visita" class="scroll-mt-24 py-20 md:py-32 md:min-h-[100svh] md:flex md:flex-col md:justify-center bg-pine relative overflow-hidden">
+<section id="visita" class="scroll-mt-24 py-20 md:py-32 md:min-h-[100svh] md:flex md:flex-col md:justify-center bg-linen relative overflow-hidden">
   <div class="mx-auto max-w-2xl px-5 md:px-8 relative">
     <div>
       <p class="reveal flex items-center gap-3 text-xs uppercase tracking-[.28em] text-gold font-semibold"><span class="inline-block h-px w-8 bg-gold"></span><span data-it="Vieni a trovarci" data-en="Visit us">Vieni a trovarci</span></p>
-      <h2 class="reveal mt-5 font-display font-medium text-[clamp(2.1rem,4.6vw,3.4rem)] text-cream" data-it="In centro, a due passi dalla Ghirlandina." data-en="In the centre, steps from the Ghirlandina.">In centro, a due passi dalla Ghirlandina.</h2>
+      <h2 class="reveal mt-5 font-display font-medium text-[clamp(2.1rem,4.6vw,3.4rem)] text-forest" data-it="In centro, a due passi dalla Ghirlandina." data-en="In the centre, steps from the Ghirlandina.">In centro, a due passi dalla Ghirlandina.</h2>
       <dl class="reveal mt-10 space-y-7">
-        <div class="flex gap-4"><span aria-hidden="true" class="mt-0.5 grid place-items-center h-10 w-10 shrink-0 rounded-full bg-gold/15 text-gold"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span><div><dt class="text-xs uppercase tracking-wider text-cream/55" data-it="Indirizzo" data-en="Address">Indirizzo</dt><dd class="mt-1 font-display text-xl text-cream">Via Donzi 7, 41121 Modena</dd></div></div>
-        <div class="flex gap-4"><span aria-hidden="true" class="mt-0.5 grid place-items-center h-10 w-10 shrink-0 rounded-full bg-gold/15 text-gold"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><dt class="text-xs uppercase tracking-wider text-cream/55" data-it="Orari" data-en="Hours">Orari</dt><dd class="mt-1 text-cream/90 leading-relaxed" data-it="Mar–Ven: 12:30–14:00 · 19:15–22:30<br/>Sab: 12:30–14:30 · 19:15–22:30<br/>Dom: 12:30–14:30 · Lun: chiuso" data-en="Tue–Fri: 12:30–14:00 · 19:15–22:30<br/>Sat: 12:30–14:30 · 19:15–22:30<br/>Sun: 12:30–14:30 · Mon: closed">Mar–Ven: 12:30–14:00 · 19:15–22:30<br/>Sab: 12:30–14:30 · 19:15–22:30<br/>Dom: 12:30–14:30 · Lun: chiuso</dd></div></div>
-        <div class="flex gap-4"><span aria-hidden="true" class="mt-0.5 grid place-items-center h-10 w-10 shrink-0 rounded-full bg-gold/15 text-gold"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></span><div><dt class="text-xs uppercase tracking-wider text-cream/55" data-it="Prenotazioni" data-en="Reservations">Prenotazioni</dt><dd class="mt-1 font-display text-xl text-cream"><a href="tel:+39059223646" class="ulink hover:text-gold transition-colors">059 223646</a></dd></div></div>
+        <div class="flex gap-4"><span aria-hidden="true" class="mt-0.5 grid place-items-center h-10 w-10 shrink-0 rounded-full bg-gold/15 text-gold"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span><div><dt class="text-xs uppercase tracking-wider text-forest/50" data-it="Indirizzo" data-en="Address">Indirizzo</dt><dd class="mt-1 font-display text-xl text-forest">Via Donzi 7, 41121 Modena</dd></div></div>
+        <div class="flex gap-4"><span aria-hidden="true" class="mt-0.5 grid place-items-center h-10 w-10 shrink-0 rounded-full bg-gold/15 text-gold"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><dt class="text-xs uppercase tracking-wider text-forest/50" data-it="Orari" data-en="Hours">Orari</dt><dd class="mt-1 text-forest/80 leading-relaxed" data-it="Mar–Ven: 12:30–14:00 · 19:15–22:30<br/>Sab: 12:30–14:30 · 19:15–22:30<br/>Dom: 12:30–14:30 · Lun: chiuso" data-en="Tue–Fri: 12:30–14:00 · 19:15–22:30<br/>Sat: 12:30–14:30 · 19:15–22:30<br/>Sun: 12:30–14:30 · Mon: closed">Mar–Ven: 12:30–14:00 · 19:15–22:30<br/>Sab: 12:30–14:30 · 19:15–22:30<br/>Dom: 12:30–14:30 · Lun: chiuso</dd></div></div>
+        <div class="flex gap-4"><span aria-hidden="true" class="mt-0.5 grid place-items-center h-10 w-10 shrink-0 rounded-full bg-gold/15 text-gold"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></span><div><dt class="text-xs uppercase tracking-wider text-forest/50" data-it="Prenotazioni" data-en="Reservations">Prenotazioni</dt><dd class="mt-1 font-display text-xl text-forest"><a href="tel:+39059223646" class="ulink hover:text-gold transition-colors">059 223646</a></dd></div></div>
       </dl>
       <div class="reveal mt-10 flex flex-col sm:flex-row sm:flex-wrap items-center sm:justify-start gap-3.5">
-        <a href="tel:+39059223646" class="inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 text-sm font-semibold text-pine hover:bg-gold-soft transition-colors cursor-pointer"><span data-it="Chiama per prenotare" data-en="Call to reserve">Chiama per prenotare</span></a>
-        <a href="https://trattoriailfantino.plateform.app/welcome" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-green-soft/50 text-cream px-7 py-3.5 text-sm font-semibold hover:bg-green/20 transition-colors cursor-pointer"><span data-it="Prenota online" data-en="Book online">Prenota online</span></a>
-        <a href="https://www.google.com/maps/dir/?api=1&destination=Trattoria%20il%20Fantino%2C%20Via%20Donzi%207%2C%2041121%20Modena" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-cream/30 px-7 py-3.5 text-sm font-semibold text-cream hover:bg-cream/10 transition-colors cursor-pointer"><span data-it="Indicazioni" data-en="Directions">Indicazioni</span></a>
+        <a href="tel:+39059223646" class="inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 text-sm font-semibold text-forest hover:bg-gold-soft transition-colors cursor-pointer"><span data-it="Chiama per prenotare" data-en="Call to reserve">Chiama per prenotare</span></a>
+        <a href="https://trattoriailfantino.plateform.app/welcome" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-teal/40 text-forest px-7 py-3.5 text-sm font-semibold hover:bg-teal/10 transition-colors cursor-pointer"><span data-it="Prenota online" data-en="Book online">Prenota online</span></a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Trattoria%20il%20Fantino%2C%20Via%20Donzi%207%2C%2041121%20Modena" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-forest/25 px-7 py-3.5 text-sm font-semibold text-forest hover:bg-forest/8 transition-colors cursor-pointer"><span data-it="Indicazioni" data-en="Directions">Indicazioni</span></a>
       </div>
     </div>
   </div>
@@ -380,35 +438,35 @@
 </main>
 
 <!-- FOOTER -->
-<footer class="bg-pine pt-16 pb-10 border-t border-line">
+<footer class="bg-linen-surface pt-16 pb-10 border-t border-line">
   <div class="mx-auto max-w-content px-5 md:px-8">
     <div class="grid md:grid-cols-12 gap-10 items-start">
       <div class="md:col-span-5">
-        <div class="flex items-center gap-3"><span aria-hidden="true" class="grid place-items-center h-11 w-11 rounded-full border border-gold/70 text-gold font-display italic text-xl">F</span><span class="font-display text-2xl tracking-tight text-cream">Trattoria il Fantino</span></div>
-        <p class="mt-5 max-w-sm text-cream/70 leading-relaxed" data-it="Cucina modenese sotto la Ghirlandina, dai primi del Novecento. Paste fresche, il banco di salumi, i vini del territorio." data-en="Modenese cooking under the Ghirlandina, since the early 1900s. Fresh pasta, the salumi counter, local wines.">Cucina modenese sotto la Ghirlandina, dai primi del Novecento. Paste fresche, il banco di salumi, i vini del territorio.</p>
+        <div class="flex items-center gap-3"><span aria-hidden="true" class="grid place-items-center h-11 w-11 rounded-full border border-gold/70 text-gold font-display italic text-xl">F</span><span class="font-display text-2xl tracking-tight text-forest">Trattoria il Fantino</span></div>
+        <p class="mt-5 max-w-sm text-forest/65 leading-relaxed" data-it="Cucina modenese sotto la Ghirlandina, dai primi del Novecento. Paste fresche, il banco di salumi, i vini del territorio." data-en="Modenese cooking under the Ghirlandina, since the early 1900s. Fresh pasta, the salumi counter, local wines.">Cucina modenese sotto la Ghirlandina, dai primi del Novecento. Paste fresche, il banco di salumi, i vini del territorio.</p>
       </div>
-      <nav class="md:col-span-3" aria-label="Footer"><h3 class="text-xs uppercase tracking-[.22em] text-cream/55" data-it="Naviga" data-en="Explore">Naviga</h3><ul class="mt-4 space-y-2.5 text-cream/90"><li><a href="#storia" class="ulink" data-it="La nostra storia" data-en="Our Story">La nostra storia</a></li><li><a href="#menu" class="ulink" data-it="Il menù" data-en="Menu">Il menù</a></li><li><a href="#galleria" class="ulink" data-it="Galleria" data-en="Gallery">Galleria</a></li><li><a href="#visita" class="ulink" data-it="Dove siamo" data-en="Visit us">Dove siamo</a></li></ul></nav>
-      <div class="md:col-span-4"><h3 class="text-xs uppercase tracking-[.22em] text-cream/55" data-it="Contatti" data-en="Contact">Contatti</h3><ul class="mt-4 space-y-2.5 text-cream/90"><li>Via Donzi 7, 41121 Modena</li><li><a href="tel:+39059223646" class="ulink">059 223646</a></li><li><a href="mailto:ilfantino.prenotazioni@gmail.com" class="ulink">ilfantino.prenotazioni@gmail.com</a></li></ul></div>
+      <nav class="md:col-span-3" aria-label="Footer"><h3 class="text-xs uppercase tracking-[.22em] text-forest/45" data-it="Naviga" data-en="Explore">Naviga</h3><ul class="mt-4 space-y-2.5 text-forest/80"><li><a href="#storia" class="ulink" data-it="La nostra storia" data-en="Our Story">La nostra storia</a></li><li><a href="#menu" class="ulink" data-it="Il menù" data-en="Menu">Il menù</a></li><li><a href="#galleria" class="ulink" data-it="Galleria" data-en="Gallery">Galleria</a></li><li><a href="#visita" class="ulink" data-it="Dove siamo" data-en="Visit us">Dove siamo</a></li></ul></nav>
+      <div class="md:col-span-4"><h3 class="text-xs uppercase tracking-[.22em] text-forest/45" data-it="Contatti" data-en="Contact">Contatti</h3><ul class="mt-4 space-y-2.5 text-forest/80"><li>Via Donzi 7, 41121 Modena</li><li><a href="tel:+39059223646" class="ulink">059 223646</a></li><li><a href="mailto:ilfantino.prenotazioni@gmail.com" class="ulink">ilfantino.prenotazioni@gmail.com</a></li></ul></div>
     </div>
-    <div class="mt-12 pt-6 border-t border-line text-sm text-cream/55">
+    <div class="mt-12 pt-6 border-t border-line text-sm text-forest/45">
       <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
         <p>© <span id="year"></span> Trattoria il Fantino · Modena</p>
         <p class="flex items-center gap-3">
           <a href="privacy.html" class="ulink" data-it="Privacy &amp; Cookie" data-en="Privacy &amp; Cookies">Privacy &amp; Cookie</a>
-          <span class="text-cream/30">·</span>
+          <span class="text-forest/25">·</span>
           <span class="font-display italic text-gold-soft">la vera cucina modenese</span>
         </p>
       </div>
-      <p class="mt-5 text-center text-xs tracking-wide text-cream/45"><span data-it="Sito web realizzato da" data-en="Website by">Sito web realizzato da</span> <a href="https://www.biprimo.com" target="_blank" rel="noopener" class="ulink font-semibold text-gold-soft hover:text-gold">Biprimo</a></p>
+      <p class="mt-5 text-center text-xs tracking-wide text-forest/40"><span data-it="Sito web realizzato da" data-en="Website by">Sito web realizzato da</span> <a href="https://www.biprimo.com" target="_blank" rel="noopener" class="ulink font-semibold text-gold hover:text-gold-soft">Biprimo</a></p>
     </div>
   </div>
 </footer>
 
 <!-- LIGHTBOX -->
-<div id="lightbox" class="fixed inset-0 z-[80] grid place-items-center bg-pine/95 backdrop-blur-sm opacity-0 pointer-events-none p-4" role="dialog" aria-modal="true" aria-label="Immagine ingrandita">
-  <button id="lb-close" type="button" aria-label="Chiudi" class="absolute top-5 right-5 grid place-items-center h-11 w-11 rounded-full bg-cream/15 text-cream hover:bg-cream/25 transition-colors cursor-pointer"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
-  <button id="lb-prev" type="button" aria-label="Precedente" class="absolute left-3 md:left-6 grid place-items-center h-12 w-12 rounded-full bg-cream/15 text-cream hover:bg-cream/25 transition-colors cursor-pointer"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
-  <button id="lb-next" type="button" aria-label="Successiva" class="absolute right-3 md:right-6 grid place-items-center h-12 w-12 rounded-full bg-cream/15 text-cream hover:bg-cream/25 transition-colors cursor-pointer"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+<div id="lightbox" class="fixed inset-0 z-[80] grid place-items-center bg-forest/95 backdrop-blur-sm opacity-0 pointer-events-none p-4" role="dialog" aria-modal="true" aria-label="Immagine ingrandita">
+  <button id="lb-close" type="button" aria-label="Chiudi" class="absolute top-5 right-5 grid place-items-center h-11 w-11 rounded-full bg-linen/15 text-linen hover:bg-linen/25 transition-colors cursor-pointer"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <button id="lb-prev" type="button" aria-label="Precedente" class="absolute left-3 md:left-6 grid place-items-center h-12 w-12 rounded-full bg-linen/15 text-linen hover:bg-linen/25 transition-colors cursor-pointer"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+  <button id="lb-next" type="button" aria-label="Successiva" class="absolute right-3 md:right-6 grid place-items-center h-12 w-12 rounded-full bg-linen/15 text-linen hover:bg-linen/25 transition-colors cursor-pointer"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
   <figure class="flex flex-col items-center gap-3 max-w-[92vw]"><img id="lb-img" src="" alt="" class="max-h-[82vh] max-w-[92vw] rounded-xl object-contain shadow-2xl" /><figcaption id="lb-cap" class="text-cream/80 font-display italic text-center"></figcaption></figure>
 </div>
 
@@ -417,7 +475,7 @@
   document.getElementById('year').textContent = new Date().getFullYear();
 
   (function(){ var btnIt=document.getElementById('lang-it'), btnEn=document.getElementById('lang-en');
-    function paint(lg){ [btnIt,btnEn].forEach(function(b){ b.classList.remove('bg-gold','text-pine'); b.classList.add('text-cream'); }); var on=lg==='it'?btnIt:btnEn; on.classList.add('bg-gold','text-pine'); on.classList.remove('text-cream'); }
+    function paint(lg){ [btnIt,btnEn].forEach(function(b){ b.classList.remove('bg-gold','text-forest'); }); var on=lg==='it'?btnIt:btnEn; on.classList.add('bg-gold','text-forest'); }
     function setLang(lg){ document.documentElement.lang=lg; document.querySelectorAll('[data-'+lg+']').forEach(function(el){ var v=el.getAttribute('data-'+lg); if(v!==null) el.innerHTML=v; }); try{ localStorage.setItem('fantino-lang',lg); }catch(e){} paint(lg); }
     btnIt.addEventListener('click', function(){ setLang('it'); }); btnEn.addEventListener('click', function(){ setLang('en'); });
     var saved='it'; try{ saved=localStorage.getItem('fantino-lang')||'it'; }catch(e){} setLang(saved); })();
